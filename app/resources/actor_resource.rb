@@ -5,6 +5,7 @@ class ActorResource < ApplicationResource
   attribute :name, :string
   attribute :dob, :date
   attribute :image, :string
+  attribute :bio, :string
 
   # Direct associations
 
