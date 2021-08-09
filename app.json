@@ -1,18 +1,9 @@
 {
-  "name": "must_see_movies_2",
+  "name": "msm-demo",
   "scripts": {
     "postdeploy": "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails sample_data"
   },
   "env": {
-    "CLOUDINARY_CLOUD_NAME":{
-      "required":true
-    },
-    "CLOUDINARY_API_KEY":{
-      "required":true
-    },
-    "CLOUDINARY_API_SECRET":{
-      "required":true
-    },
     "ROLLBAR_ACCESS_TOKEN": {
       "required": true
     },
@@ -47,9 +38,7 @@
     }
   },
   "addons": [
-    {
-      "plan": "heroku-postgresql"
-    }
+    "heroku-postgresql"
   ],
   "buildpacks": [
     {
