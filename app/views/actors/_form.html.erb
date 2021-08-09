@@ -67,5 +67,27 @@
       <% end %>
     <% end %>
   </div>
+  <div class="form-group">
+    <% bio_class = "form-control" %>
+    <% bio_was_invalid = actor.errors.include?(:bio) %>
+
+    <% if was_validated %>
+      <% if bio_was_invalid %>
+        <% bio_class << " is-invalid" %>
+      <% else %>
+        <% bio_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :bio %>
+    <%= f.text_area :bio, class: bio_class, placeholder: "Enter bio" %>
+    <% if bio_was_invalid %>
+      <% actor.errors.full_messages_for(:bio).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
