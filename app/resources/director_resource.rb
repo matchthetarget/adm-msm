@@ -13,5 +13,4 @@ class DirectorResource < ApplicationResource
              resource: MovieResource
 
   # Indirect associations
-
 end
