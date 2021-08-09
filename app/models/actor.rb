@@ -6,6 +6,10 @@ class Actor < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :filmography,
+             :through => :characters,
+             :source => :movie
+
   # Validations
 
   validates :name, :presence => true
