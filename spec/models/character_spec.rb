@@ -12,6 +12,8 @@ RSpec.describe Character, type: :model do
 
     describe "Validations" do
 
+    it { should validate_presence_of(:actor_id) }
+
     it { should validate_presence_of(:movie_id) }
 
     it { should validate_presence_of(:name) }
