@@ -1,7 +1,7 @@
 {
   "name": "must_see_movies_2",
   "scripts": {
-    "postdeploy": "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails dev:prime"
+    "postdeploy": "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails sample_data"
   },
   "env": {
     "CLOUDINARY_CLOUD_NAME":{
