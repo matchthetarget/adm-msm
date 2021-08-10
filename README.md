@@ -1,4 +1,4 @@
-# MustSeeMovies2
+# Must See Movies
 
 ## Cloudinary Setup
 
