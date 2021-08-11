@@ -39,6 +39,10 @@ class DirectorsController < ApplicationController
     redirect_to directors_url, notice: "Director was successfully destroyed."
   end
 
+  def names
+    render json: [{ "label": "Frank Darabont", "value": "1" }, { "label": "Francis Ford Coppola", "value": "2" }, { "label": "Quentin Tarantino", "value": "3" }, { "label": "Robert Zemeckis", "value": "15" }].to_json
+  end
+
   private
 
   def set_director
