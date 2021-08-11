@@ -22,4 +22,4 @@ test:
 
 production:
   adapter: postgresql
-  url:  postgres://kbvewajiwblxve:38d7bc518bbe72d2afde38c1ac49671993113d8b031a938cd02da80be2fc88da@ec2-52-23-45-36.compute-1.amazonaws.com:5432/dcbkdducs17jbf
+  url: <%= ENV.fetch("DATABASE_URL", "") %>
