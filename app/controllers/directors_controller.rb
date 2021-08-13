@@ -5,6 +5,7 @@ class DirectorsController < ApplicationController
     @q = Director.ransack(params[:q])
     @directors = @q.result(distinct: true).includes(:filmography).
     order(created_at: :desc, id: :desc)
+    .page(params[:page]).per(10)
   end
 
   def show

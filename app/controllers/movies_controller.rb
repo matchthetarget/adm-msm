@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
     @movies = @q.result(distinct: true).
                  includes(:characters, :director, :cast).
                  order(created_at: :desc, id: :desc)
+                 .page(params[:page]).per(10)
   end
 
   def show
