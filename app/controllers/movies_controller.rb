@@ -3,8 +3,9 @@ class MoviesController < ApplicationController
 
   def index
     @q = Movie.ransack(params[:q])
-    @movies = @q.result(distinct: true).includes(:characters, :director,
-                                                 :cast).page(params[:page]).per(10)
+    @movies = @q.result(distinct: true).
+                 includes(:characters, :director, :cast).
+                 order(created_at: :desc, id: :desc)
   end
 
   def show

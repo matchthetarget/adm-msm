@@ -4,7 +4,8 @@ class ActorsController < ApplicationController
   def index
     @q = Actor.ransack(params[:q])
     @actors = @q.result(distinct: true).includes(:characters,
-                                                 :filmography).page(params[:page]).per(10)
+                                                 :filmography).
+                                                 order(created_at: :desc, id: :desc)
   end
 
   def show

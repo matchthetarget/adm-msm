@@ -4,7 +4,8 @@ class CharactersController < ApplicationController
   def index
     @q = Character.ransack(params[:q])
     @characters = @q.result(distinct: true).includes(:movie,
-                                                     :actor).page(params[:page]).per(10)
+                                                     :actor).
+                                                     order(created_at: :desc, id: :desc)
   end
 
   def show; end

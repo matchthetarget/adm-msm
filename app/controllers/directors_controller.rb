@@ -3,7 +3,8 @@ class DirectorsController < ApplicationController
 
   def index
     @q = Director.ransack(params[:q])
-    @directors = @q.result(distinct: true).includes(:filmography).page(params[:page]).per(10)
+    @directors = @q.result(distinct: true).includes(:filmography).
+    order(created_at: :desc, id: :desc)
   end
 
   def show
