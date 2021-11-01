@@ -10,7 +10,7 @@
   <ul class="list-group list-group-flush">
     <% @movie.characters.each do |character| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <%= link_to character.id, character_path(character) %>
+        <%= link_to character.name, character_path(character) %>
 
         <%= link_to character, method: :delete, data: { confirm: "Do you really want to delete this character" } do %>
           <i class="fas fa-trash-alt"></i>
